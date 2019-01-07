@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -7,5 +9,9 @@ public class Main {
         System.out.println(wheatField.field[0][2].numberOfGrain);
         System.out.println(wheatField.field[0][3].numberOfGrain);
         System.out.println(wheatField.field[0][4].numberOfGrain);
+
+
+        Drone d = new Drone();
+        d.scan(wheatField);
     }
 }

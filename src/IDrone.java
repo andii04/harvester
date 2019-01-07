@@ -1,4 +1,4 @@
 public interface IDrone {
-    void scan();
+    void scan(WheatField w);
 
 }

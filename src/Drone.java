@@ -1,9 +1,16 @@
+import java.util.HashMap;
+
 public class Drone implements IDrone{
 
-    public void scan()
+    HashMap<String, Integer> hmap = new HashMap<>();
+    public void scan(WheatField wheatField)
     {
-        System.out.println("Scan erfolgreich");
+        for(int i =0; i<10000;i++){
+            for(int j =0; j<10000;j++){
+                hmap.put(""+i +", "+j,(int) wheatField.field[i][j].numberOfGrain);
+            }
+            }
+    }
     }
 
-}
 
