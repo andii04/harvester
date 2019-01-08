@@ -1,6 +1,6 @@
 public class WheatField {
 
-
+//filling field with wheat
     Wheat[][]field = new Wheat[10000][10000];
     public WheatField() {
 

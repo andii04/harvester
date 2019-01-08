@@ -1,2 +1,2 @@
-public class Harvester {
+public class Harvester extends Vehicle {
 }
