@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Harvester extends Vehicle {
@@ -8,8 +9,10 @@ public class Harvester extends Vehicle {
     private BordComputer bordComputer;
     private Cabin cabin;
     private CutterBar cutterBar;
+    private ArrayList<Wheels>wheels;
 
-    public Harvester(Engine engine,GrainTank grainTank, ArrayList<Lights>lights, BordComputer bordComputer, Cabin cabin, CutterBar cutterBar) {
+    public Harvester(Engine engine, GrainTank grainTank, ArrayList<Lights>lights,
+                     BordComputer bordComputer, Cabin cabin, CutterBar cutterBar, ArrayList<Wheels>wheels) {
 
         //Associations
         this.engine = engine;
@@ -18,6 +21,7 @@ public class Harvester extends Vehicle {
         this.bordComputer = bordComputer;
         this.cabin = cabin;
         this.cutterBar = cutterBar;
+        this.wheels = wheels;
 
 
 

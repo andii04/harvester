@@ -11,6 +11,7 @@ public class Drone implements IDrone{
             {
                 hmap.put(new Position(i,j),(int) wheatField.field[i][j].numberOfGrain);
 
+
             }
         }
     }
