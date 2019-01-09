@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public class BordComputer {
     private WheatField wheatField;
-    TreeMap<Position, Short> treeMap;
+    private TreeMap<Position, Short> treeMap;
 
     public BordComputer(WheatField wheatField){
         this.wheatField = wheatField;
@@ -17,7 +17,7 @@ public class BordComputer {
         //add scanned field to Hash
         addFieldToMap();
     }
-    void addFieldToMap(){
+    private void addFieldToMap(){
         treeMap = new TreeMap<>(new Comparator<Position>() {
             @Override //Override Compare Func
             public int compare(Position p1, Position p2) {
@@ -37,7 +37,7 @@ public class BordComputer {
         }
         outPut();
     }
-    void outPut(){
+    private void outPut(){
         System.out.println(treeMap);/*
         for (Position treeKey : treeMap.keySet()){
             System.out.println("Position :" + treeKey.getX() + "/"+treeKey.getY() +" mit der Anzahl " + treeMap.get(treeKey));
@@ -45,14 +45,14 @@ public class BordComputer {
         goToEnd();
     }
 
-    void PrintWheatOnPosition(int x, int y){
+    private void PrintWheatOnPosition(int x, int y){
         System.out.println("Number of grain on this Position:" + treeMap.get(new Position(x,y)));
     }
-    void PrintWheatOnPosition(Position p1){
+    private void PrintWheatOnPosition(Position p1){
         System.out.println("Number of grain on this Position:" + treeMap.get(p1));
     }
 
-    void goToEnd (){
+    private void goToEnd (){
         /*PrintWheatOnPosition(100,100);
         PrintWheatOnPosition(new Position(200, 200));*/
 

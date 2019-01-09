@@ -12,7 +12,6 @@ public class Harvester extends Vehicle {
     private ArrayList<Wheels>wheels;
 
     public Harvester(WheatField wheatField) {
-
         //Associations
         lights = new ArrayList<>();
         lights.add(new Lights(LightType.frontlight));
