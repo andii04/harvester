@@ -18,12 +18,12 @@ public class Harvester extends Vehicle {
         lights.add(new Lights(LightType.frontlight));
         lights.add(new Lights(LightType.backlight));
         wheels= new ArrayList<>();
-        wheels.add(new Wheels());
-        wheels.add(new Wheels());
-        wheels.add(new Wheels());
-        wheels.add(new Wheels());
-        engine = new Engine();
-        grainTank = new GrainTank();
+        wheels.add(new Wheels((byte)30,WheelPosition.VR));
+        wheels.add(new Wheels((byte)30,WheelPosition.VL));
+        wheels.add(new Wheels((byte)30,WheelPosition.HL));
+        wheels.add(new Wheels((byte)30,WheelPosition.HR));
+        engine = new Engine(500, true);
+        grainTank = new GrainTank(50000);
         bordComputer = new BordComputer(wheatField);
         cabin = new Cabin();
         cutterBar = new CutterBar();

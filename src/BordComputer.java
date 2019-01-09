@@ -1,5 +1,5 @@
-import java.util.Collections;
 import java.util.Comparator;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class BordComputer {
@@ -42,13 +42,28 @@ public class BordComputer {
         for (Position treeKey : treeMap.keySet()){
             System.out.println("Position :" + treeKey.getX() + "/"+treeKey.getY() +" mit der Anzahl " + treeMap.get(treeKey));
         }*/
-        getWheatOnPosition(100,100);
+        goToEnd();
     }
 
-    void getWheatOnPosition(int x, int y){
-        System.out.println("Anzahl Körner an dieser Position :" + treeMap.get(new Position(x,y)));
+    void PrintWheatOnPosition(int x, int y){
+        System.out.println("Number of grain on this Position:" + treeMap.get(new Position(x,y)));
     }
-    void getWheatOnPosition(Position p1){
-        System.out.println("Anzahl Körner an dieser Position :" + treeMap.get(p1));
+    void PrintWheatOnPosition(Position p1){
+        System.out.println("Number of grain on this Position:" + treeMap.get(p1));
+    }
+
+    void goToEnd (){
+        /*PrintWheatOnPosition(100,100);
+        PrintWheatOnPosition(new Position(200, 200));*/
+
+        Scanner sc = new Scanner(System.in);
+
+        while (true){
+            System.out.println("Input X: ");
+            int x = sc.nextInt();
+            System.out.println("Input Y: ");
+            int y = sc.nextInt();
+            PrintWheatOnPosition(new Position(x,y));
+        }
     }
 }
