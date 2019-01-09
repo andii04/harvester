@@ -1,21 +1,17 @@
-import java.util.HashMap;
 
 //implements interface and his methods
 public class Drone implements IDrone{
 
 
-    public HashMap<Position, Short> scan(WheatField wheatField)
+    public void scan(WheatField wheatField)
     {
-        HashMap<Position, Short> hmap = new HashMap<>();
-        for(int i =0; i<100;i++)
+        for(int i =0; i<wheatField.getFieldSize(); i++)
         {
-            for(int j =0; j<100;j++)
+            for(int j =0; j<wheatField.getFieldSize(); j++)
             {
-                hmap.put(new Position(i,j),wheatField.field[i][j].numberOfGrain);
+                wheatField.field[i][j].setPosition(new Position(i,j));
             }
         }
-        System.out.println(hmap);
-        return hmap;
     }
 }
 

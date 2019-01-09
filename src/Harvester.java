@@ -10,21 +10,23 @@ public class Harvester extends Vehicle {
     private Cabin cabin;
     private CutterBar cutterBar;
     private ArrayList<Wheels>wheels;
-    private WheatField wheatField;
 
-    public Harvester(Engine engine, GrainTank grainTank, ArrayList<Lights>lights,
-                     BordComputer bordComputer, Cabin cabin, CutterBar cutterBar, ArrayList<Wheels>wheels) {
+    public Harvester(WheatField wheatField) {
 
         //Associations
-        this.engine = engine;
-        this.grainTank = grainTank;
-        this.lights = lights;
-        this.bordComputer = bordComputer;
-        this.cabin = cabin;
-        this.cutterBar = cutterBar;
-        this.wheels = wheels;
-
-
+        lights = new ArrayList<>();
+        lights.add(new Lights(LightType.frontlight));
+        lights.add(new Lights(LightType.backlight));
+        wheels= new ArrayList<>();
+        wheels.add(new Wheels());
+        wheels.add(new Wheels());
+        wheels.add(new Wheels());
+        wheels.add(new Wheels());
+        engine = new Engine();
+        grainTank = new GrainTank();
+        bordComputer = new BordComputer(wheatField);
+        cabin = new Cabin();
+        cutterBar = new CutterBar();
 
 
     }
