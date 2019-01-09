@@ -16,20 +16,18 @@ public class BordComputer {
         d.scan(wheatField); //Wheatfield gets Position(x,y) because of scan
         //add scanned field to Hash
         addFieldToMap();
-
-
     }
     void addFieldToMap(){
         treeMap = new TreeMap<>(new Comparator<Position>() {
             @Override //Override Compare Func
             public int compare(Position p1, Position p2) {
-                if(wheatField.field[p1.x][p1.y].getNumberOfGrain() == wheatField.field[p2.x][p2.y].getNumberOfGrain()){
-                    if (p1.x == p2.x){
-                        return p1.y - p2.y;
+                if(wheatField.field[p1.getX()][p1.getY()].getNumberOfGrain() == wheatField.field[p2.getX()][p2.getY()].getNumberOfGrain()){
+                    if (p1.getX() == p2.getX()){
+                        return p1.getY() - p2.getY();
                     }
-                    else return p1.x -p2.x;
+                    else return p1.getX() -p2.getX();
                 }
-                else return wheatField.field[p2.x][p2.y].getNumberOfGrain() - wheatField.field[p1.x][p1.y].getNumberOfGrain();
+                else return wheatField.field[p2.getX()][p2.getY()].getNumberOfGrain() - wheatField.field[p1.getX()][p1.getY()].getNumberOfGrain();
             }
         });
         for(short i = 0; i<wheatField.getFieldSize(); i++){
@@ -40,8 +38,17 @@ public class BordComputer {
         outPut();
     }
     void outPut(){
+        System.out.println(treeMap);/*
         for (Position treeKey : treeMap.keySet()){
-            System.out.println("Position :" + treeKey.x + "/"+treeKey.y +" mit der Höhe " + treeMap.get(treeKey));
-        }
+            System.out.println("Position :" + treeKey.getX() + "/"+treeKey.getY() +" mit der Anzahl " + treeMap.get(treeKey));
+        }*/
+        getWheatOnPosition(100,100);
+    }
+
+    void getWheatOnPosition(int x, int y){
+        System.out.println("Anzahl Körner an dieser Position :" + treeMap.get(new Position(x,y)));
+    }
+    void getWheatOnPosition(Position p1){
+        System.out.println("Anzahl Körner an dieser Position :" + treeMap.get(p1));
     }
 }

@@ -4,6 +4,21 @@ public class Position {
         this.x = x;
         this.y =y;
     }
-    int x;
-    int y;
+    private int x;
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    private int y;
+
+    @Override
+    public String toString(){
+        return "Position : " + getX() + "/" + getY();
+
+    }
 }

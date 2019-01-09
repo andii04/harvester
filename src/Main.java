@@ -8,5 +8,6 @@ public class Main {
         WheatField wheatField = new WheatField(1000);
         Harvester harvester = new Harvester(wheatField);
         harvester.scan();
+
     }
 }
