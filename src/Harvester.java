@@ -10,6 +10,7 @@ public class Harvester extends Vehicle {
     private Cabin cabin;
     private CutterBar cutterBar;
     private ArrayList<Wheels>wheels;
+    private WheatField wheatField;
 
     public Harvester(Engine engine, GrainTank grainTank, ArrayList<Lights>lights,
                      BordComputer bordComputer, Cabin cabin, CutterBar cutterBar, ArrayList<Wheels>wheels) {
@@ -26,5 +27,8 @@ public class Harvester extends Vehicle {
 
 
 
+    }
+    void scan(){
+        bordComputer.flyingDrone();
     }
 }

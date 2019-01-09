@@ -1,5 +1,7 @@
+import java.util.HashMap;
+
 //Interface with methods
 public interface IDrone {
-    void scan(WheatField w);
+    HashMap<Position, Short> scan(WheatField w);
 
 }
