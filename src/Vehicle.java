@@ -3,6 +3,8 @@ public class Vehicle {
     protected int weight;
     protected String manufacture;
 
+
+
     public Vehicle(int weight, String manufacture) {
         this.weight = weight;
         this.manufacture = manufacture;

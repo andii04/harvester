@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+//Generalization
 public class Harvester extends Vehicle {
 
     private Engine engine;

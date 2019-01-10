@@ -1,3 +1,4 @@
+//interface
 public interface IBordComputer {
     //Send Drone
     void flyingDrone();

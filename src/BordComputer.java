@@ -1,9 +1,11 @@
 import java.util.Comparator;
 import java.util.Scanner;
 import java.util.TreeMap;
-
+//implements interface
 public class BordComputer implements IBordComputer {
     private WheatField wheatField;
+
+    //Datastructure treemap
     private TreeMap<Position, Short> treeMap;
 
     public BordComputer(WheatField wheatField){
@@ -21,7 +23,9 @@ public class BordComputer implements IBordComputer {
     //Array to TreeMap
     public void addFieldToMap(){
         treeMap = new TreeMap<>(new Comparator<Position>() {
-            @Override //Override Compare Func of TreeMap
+
+
+            @Override //Override Compare Func of TreeMap + Sorting
             public int compare(Position p1, Position p2) {
                 if(wheatField.field[p1.getX()][p1.getY()].getNumberOfGrain() == wheatField.field[p2.getX()][p2.getY()].getNumberOfGrain()){
                     if (p1.getX() == p2.getX()){
@@ -56,6 +60,7 @@ public class BordComputer implements IBordComputer {
         System.out.println("Number of grain on this Position:" + treeMap.get(p1));
     }
 
+    //Search
     //While loop for input
     public void goToEnd (){
         /*printWheatOnPosition(100,100);
