@@ -21,7 +21,7 @@ public class BordComputer implements IBordComputer {
     //Array to TreeMap
     public void addFieldToMap(){
         treeMap = new TreeMap<>(new Comparator<Position>() {
-            @Override //Override Compare Func of TreeMap
+            @Override //Override Compare Func of TreeMap + Sorting
             public int compare(Position p1, Position p2) {
                 if(wheatField.field[p1.getX()][p1.getY()].getNumberOfGrain() == wheatField.field[p2.getX()][p2.getY()].getNumberOfGrain()){
                     if (p1.getX() == p2.getX()){
