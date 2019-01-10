@@ -21,7 +21,7 @@ public class Wheat {
     private short numberOfGrain;
 
     public Wheat() {
-        this.numberOfGrain = (short) (100 + (int)(Math.random() * ((500 - 100) + 1)));
+        setNumberOfGrain((short) (100 + (int)(Math.random() * ((500 - 100) + 1))));
     }
 
 

@@ -11,8 +11,9 @@ public class Harvester extends Vehicle {
     private CutterBar cutterBar;
     private ArrayList<Wheels>wheels;
 
-    public Harvester(WheatField wheatField) {
+    public Harvester(WheatField wheatField, String manufacture, int ps, int capacity, int weight) {
         //Associations
+        super(weight, manufacture);
         lights = new ArrayList<>();
         lights.add(new Lights(LightType.frontlight));
         lights.add(new Lights(LightType.backlight));
@@ -21,10 +22,11 @@ public class Harvester extends Vehicle {
         wheels.add(new Wheels((byte)30,WheelPosition.VL));
         wheels.add(new Wheels((byte)30,WheelPosition.HL));
         wheels.add(new Wheels((byte)30,WheelPosition.HR));
-        engine = new Engine(500, true);
-        grainTank = new GrainTank(50000);
+        engine = new Engine(ps, true);
+        grainTank = new GrainTank(capacity);
         bordComputer = new BordComputer(wheatField);
         cabin = new Cabin();
+
         cutterBar = new CutterBar();
 
 
